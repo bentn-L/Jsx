@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const isValid = true;
+
+  const hasPromoCode = true;
+
+  const isServerError = true;
+
+  if (isServerError) {
+    return (
+      <>
+        <p>Dogodio se error na serveru!</p>
+      </>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Rezultat kupnje</h1>
+      <p>Vasa narudzba je</p>
+      {isValid ? <p>USPJESNA</p> : <p>NEUSPJESNA</p>}
+      {hasPromoCode && <p>Vas promo code je uspjesno iskoristen!</p>}
+    </>
   );
 }
-
 export default App;
